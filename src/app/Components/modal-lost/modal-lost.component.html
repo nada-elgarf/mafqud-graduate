@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="header">
+        <h1>Missing People</h1>
+        <h2 (click)="closeModal()" style="cursor: pointer;"><i class="fa-solid fa-circle-arrow-right"></i></h2>
+      </div>
+      <div class="body mt-4">
+        <form [formGroup]="myFormLost">
+          <div class="mb-2 avatar">
+            <img [src]="urlImg" width="150px">
+            <input type="file" class="form-control" (change)="onFileSelected($event)" id="selectFoundImg" hidden
+              formControlName="Image">
+          </div>
+          <div class="select mb-1">
+            <label for="selectFoundImg" class="btn btn-secondary m-3 ">Select Photo</label>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Name" formControlName="Name">
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Date" formControlName="Date">
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-2">
+                <input type="text" class="form-control" placeholder="Age" formControlName="Age">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-2">
+                <input type="text" class="form-control" placeholder="City" formControlName="LostCity">
+              </div>
+            </div>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Address-City" formControlName="Address_City">
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="The Person Who lost Child"
+              formControlName="PersonWhoLost">
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Phone" formControlName="PhonePersonWhoLost">
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" placeholder="Gender" formControlName="Gender">
+          </div>
+          <div class="form-floating mb-4">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px" formControlName="Note"></textarea>
+            <label for="floatingTextarea2">Notes</label>
+          </div>
+          <button type="submit" class="post" [disabled]="!myFormLost.valid" (click)="lostSubmit()">Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

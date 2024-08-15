@@ -1,0 +1,48 @@
+<div class="head">
+  <div class="icons">
+    <span>
+      <h2>The Results</h2>
+      <p>"We try to help you finding your lost."</p>
+    </span>
+  </div>
+  <div class="search">
+    <input type="search" placeholder="Search" (click)="openModal()" data-bs-toggle="modal" data-bs-target="#myModal">
+  </div>
+</div>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">Search by</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeModal()"></button>
+      </div>
+
+      <!-- Modal body -->
+      <form>
+        <div class="modal-body mb-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Enter Your Name">
+                </div>
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Enter Your City">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectImg" class="btn btn-secondary m-3">Select Photo</label>
+                  <img [src]="urlImg" width="100px">
+                  <input type="file" class="form-control" (change)="onSelectFile($event)" id="selectImg" hidden>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

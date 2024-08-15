@@ -1,0 +1,308 @@
+.head {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons {
+  margin-left: 10px;
+}
+
+.icons h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 26px;
+}
+
+.icons p {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #AAAAAA;
+}
+
+.search {
+  position: relative;
+}
+
+.head .search::before {
+  font-family: var(--fa-style-family-classic);
+  content: "\f002";
+  font-weight: 900;
+  position: absolute;
+  right: 15px;
+  top: 26%;
+  transform: translateY(-50%);
+  color: var(--grey-color);
+  font-size: 14px;
+}
+
+
+.search input {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin-left: 5px;
+  padding-left: 30px;
+  width: 200px;
+  transition: width 0.3s;
+}
+
+.head .search input:focus {
+  width: 250px;
+  outline: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  color: rgba(130, 112, 244, 1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 25px;
+}
+
+.modal-body label {
+  background-color: rgba(130, 112, 244, 1);
+  border: none;
+}
+
+form {
+  padding: 0;
+}
+
+
+@media screen and (max-width: 576px) {
+  .head {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icons {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .search {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .head {
+    padding: 10px;
+  }
+
+  .search input {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .head {
+    padding: 15px 50px;
+  }
+
+  .search input {
+    width: 200px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .head {
+    padding: 15px;
+  }
+
+  .search input {
+    width: 250px;
+  }
+}
+
+
+/* Default Styles */
+.home {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+  min-height: 80vh;
+}
+
+.no-results {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home .row {
+  margin-top: 10px;
+}
+
+.home .card {
+  border-radius: 20px;
+  box-shadow: 0 0 6px #ddd;
+  transition: box-shadow 0.3s ease;
+  width: 18rem;
+  /* Increase the card width */
+}
+
+.home .card:hover {
+  box-shadow: 0 0 12px #aaa;
+}
+
+.home .card img {
+  width: 100%;
+  height: 220px;
+  /* Increase the image height */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-title, .date {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title span {
+  font-weight: 500;
+}
+
+.card-text {
+  margin-bottom: 8px;
+}
+
+.date {
+  color: #aaa;
+  padding-bottom: 0;
+}
+
+.date a {
+  color: #4B7AF1;
+}
+
+.date span {
+  font-size: 12px;
+}
+
+.see-more {
+  border: none;
+  background-color: transparent;
+  color: rgba(75, 122, 241, 1);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
+/* Media Query: Small Phones (up to 576px) */
+@media screen and (max-width: 576px) {
+  .home {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .home .card {
+    width: 100%;
+    /* Make the card full-width */
+    margin-bottom: 10px;
+  }
+
+  .home .card img {
+    height: 160px;
+    /* Adjusted for smaller screens */
+  }
+
+  .card-title, .date {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-title span {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 14px;
+  }
+
+  .date {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .date span {
+    font-size: 10px;
+  }
+
+  .see-more {
+    font-size: 10px;
+  }
+}
+
+/* Media Query: Tablets (577px to 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .home {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .home .card {
+    width: 100%;
+    /* Make the card full-width */
+    margin-bottom: 10px;
+  }
+
+  .home .card img {
+    height: 180px;
+    /* Adjusted for tablets */
+  }
+
+  .card-title span {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  .date span {
+    font-size: 11px;
+  }
+
+  .see-more {
+    font-size: 11px;
+  }
+}
+
+/* Media Query: Laptops and Desktops (769px and above) */
+@media screen and (min-width: 769px) {
+  .home {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .home .card {
+    width: 18rem;
+    /* Default size, increased from original */
+  }
+
+  .home .card img {
+    height: 220px;
+    /* Increased image height */
+  }
+}

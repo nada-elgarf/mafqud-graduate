@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #cecdcd;
+  color: rgba(130, 112, 244, 1);
+}
+
+.header h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.body .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.select {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}
+
+.select label {
+  background-color: rgba(130, 112, 244, 1);
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+}
+
+.gender {
+  font-size: 20px;
+}
+
+.form-check {
+  font-size: 18px;
+}
+
+input[type="radio"]:checked {
+  background-color: rgba(130, 112, 244, 1);
+}
+
+.post {
+  display: block;
+  margin-top: 15px;
+  margin: auto;
+  padding: 8px 30px;
+  border-radius: 16px;
+  border: none;
+  background: #751ce0;
+  color: #fff;
+  font-size: 20px;
+}

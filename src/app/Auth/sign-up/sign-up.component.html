@@ -1,0 +1,47 @@
+<div class="page">
+  <div class="overlay"></div>
+  <div class="text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mt-5">
+          <div class="content">
+            <h1>Welcome to Mafqud</h1>
+            <p>We try to help you finding <br>your lost.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="create-account">
+            <h3>Create account!</h3>
+            <form [formGroup]="userRegister" (ngSubmit)="userSubmit()">
+              <div class="row mb-4">
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" placeholder="User Name" class="form-control" formControlName="UserName"
+                      id="firstname" name="fname" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-outline">
+                    <input type="text" placeholder="Name" class="form-control" formControlName="Name" id="lastname"
+                      name="lname" />
+                  </div>
+                </div>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="email" placeholder="Email" class="form-control" formControlName="Email" id="email"
+                  name="email" />
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" placeholder="Password" class="form-control" formControlName="Password"
+                  id="password" name="pass" />
+              </div>
+              <button type="submit" class="btn btn-primary mb-4 create">Create account</button>
+              <span class="pb-3">Already have an account?</span>
+              <a class="btn btn-light login" (click)="goToLogin()">Login</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

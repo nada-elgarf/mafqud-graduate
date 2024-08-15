@@ -1,0 +1,42 @@
+<div class="details mt-5" *ngIf="child">
+  <div class="container">
+    <div class="row">
+      <div class="user mt-2">
+        <div class="info">
+          <span>{{ userName ? userName.charAt(0).toUpperCase() : '' }}</span>
+          <h1> {{userName }}</h1>
+        </div>
+        <div class="delete mt-2">
+          <button (click)="deleteFoundChild(child.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="detail mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row info-child">
+            <div class="col-md-6">
+              <h2>Name: {{ child.name }}</h2>
+              <h2>Found City: {{ child.foundCity }}</h2>
+              <h2>Date: {{ child.date | date:'shortDate' }}</h2>
+              <h2>Gender: {{ child.gender }}</h2>
+              <h2>Person Who Found Him: {{ child.personWhoFoundhim }}</h2>
+            </div>
+            <div class="col-md-6">
+              <h2>Age: {{ child.age }}</h2>
+              <h2>Address City: {{ child.address_City }}</h2>
+              <h2>Finder Contact: {{ child.phonePersonWhoFoundhim }}</h2>
+              <h2>Note: {{ child.note }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img [src]="'data:image/jpeg;base64,' + child.image" alt="Child Photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

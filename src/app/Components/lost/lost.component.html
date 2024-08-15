@@ -1,0 +1,72 @@
+<!-- lost.component.html -->
+
+<div class="head">
+  <div class="icons">
+    <span>
+      <h2>The lost children</h2>
+      <p>"Help Us Locate These Loved Ones..."</p>
+    </span>
+  </div>
+  <div class="search">
+    <input type="search" placeholder="Search" (click)="openModal()" data-bs-toggle="modal" data-bs-target="#myModal">
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" [ngClass]="{'show': showModal}" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Search by</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeModal()"></button>
+      </div>
+      <form [formGroup]="formSearch" (ngSubmit)="onSubmit()">
+        <div class="modal-body mb-3">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3 mt-4">
+                  <input type="text" class="form-control" placeholder="Enter Child's Name" formControlName="Name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="selectImg" class="btn btn-secondary m-3">Select Photo</label>
+                  <img [src]="urlImg" width="100px">
+                  <input type="file" class="form-control" (change)="onSelectFile($event)" id="selectImg" hidden>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="home">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 card-row p-2" *ngFor="let child of (results.length > 0 ? results : lostChild)">
+        <div class="card" style="width: 16rem;">
+          <img [src]="'data:image/jpeg;base64,' + child.image" class="card-img-top" alt="{{ child.name }}">
+          <div class="card-body">
+            <div class="card-title">
+              <span>Name: {{ child.name }}</span>
+              <span>Address: {{ child.address_City }}</span>
+            </div>
+            <span class="card-text">The Note: {{ child.note }}</span>
+            <div class="date">
+              <span>{{ child.date | date:'fullDate' }}</span>
+              <button class="see-more" (click)="gotoDetails(child)">See more...</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

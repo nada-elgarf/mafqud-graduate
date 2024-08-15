@@ -1,0 +1,53 @@
+<div class="sidebar">
+  <h1 class="text-center"><i class="fa-solid fa-circle-question"></i> Mafqud</h1>
+  <ul>
+    <li>
+      <a (click)="openModal()" data-bs-toggle="modal" data-bs-target="#uploadPhoto">
+        <i class="fa-regular fa-image fa-w"></i>
+        <span>Upload Photo</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/">
+        <i class="fa-solid fa-house fa-w"></i>
+        <span>The Found</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/Lost">
+        <i class="fa-solid fa-users fa-w"></i>
+        <span>The Lost</span>
+      </a>
+    </li>
+    <li>
+      <a routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" routerLink="/Setting">
+        <i class="fa-solid fa-gear fa-w"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+    <!-- Log Out at the bottom -->
+    <li class="logout">
+      <a (click)="logout()">
+        <i class="fa-solid fa-arrow-right-from-bracket fa-w"></i>
+        <span>Log Out</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="uploadPhoto">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Are you <span>found</span> or <span>lost</span> a child?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeModal()"></button>
+      </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="openFoundModal()">Found</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="openLostModal()">Lost</button>
+      </div>
+    </div>
+  </div>
+</div>

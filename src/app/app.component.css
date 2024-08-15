@@ -1,0 +1,10 @@
+.page {
+  display: flex;
+  background-color: #f1f5f9;
+  height: auto;
+}
+
+.content {
+  width: 100%;
+  overflow: hidden;
+}

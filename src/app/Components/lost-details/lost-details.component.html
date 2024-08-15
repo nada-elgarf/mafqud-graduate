@@ -1,0 +1,42 @@
+<div class="details mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="user mt-2">
+        <div class="info">
+          <img src="assets\image\photo.png" alt="">
+          <h1>Mariam wael</h1>
+        </div>
+        <div class="delete mt-2">
+          <button (click)="deleteLostChild(child.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="detail mt-5" *ngIf="child">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class=" row info-child">
+            <div class="col-md-6">
+              <h2>Name Child : {{ child.name }}</h2>
+              <h2>Found City: {{ child.lostCity }}</h2>
+              <h2>Date : {{ child.date | date:'shortDate' }}</h2>
+              <h2>The Gender : {{ child.gender }}</h2>
+              <h2>Name PersonWhoFoundHim: {{ child.personWhoLost }}</h2>
+            </div>
+            <div class="col-md-6">
+              <h2>Age Child : {{ child.age }}</h2>
+              <h2>Address City : {{ child.address_City }}</h2>
+              <h2>Phone Number : {{ child.phonePersonWhoLost }}</h2>
+              <h2>Then Note : {{ child.note }}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <img [src]="'data:image/jpeg;base64,' + child.image" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

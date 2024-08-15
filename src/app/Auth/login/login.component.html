@@ -1,0 +1,35 @@
+<div class="page">
+  <div class="overlay"></div>
+  <div class="text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 mt-5">
+          <div class="content">
+            <h1>Welcome to Mafqud</h1>
+            <p>We try to help you finding <br>your lost.</p>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="create-account">
+            <h3>Login in</h3>
+            <form [formGroup]="loginForm" (ngSubmit)="userSubmit()">
+              <div class="form-outline mb-4">
+                <input type="text" placeholder="User Name" class="form-control" formControlName="UserName" />
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" placeholder="Password" class="form-control" formControlName="Password" />
+                <h6>Forget password?</h6>
+                <div class="clear"></div>
+              </div>
+              <button type="submit" class="btn btn-primary mb-4 mt-3 create"
+                [disabled]="!loginForm.valid">Login</button>
+              <span class="pb-3">Don’t have an account?</span>
+              <a class="btn btn-light login" (click)="goToSignUp()">Create One</a>
+              <span class="error-message" *ngIf="errorMessage">{{ errorMessage }}</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
